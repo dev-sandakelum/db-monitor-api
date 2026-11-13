@@ -9,6 +9,7 @@ REST backend for DB Monitor v2.3.0 cloud sync.
 | GET | /api/items/:id | One record |
 | PUT | /api/items/:id | Create/replace (last-write-wins by `updatedAt`) |
 | DELETE | /api/items/:id | Remove a record |
+| GET | /api/tecmis-last-date | Get the latest posted_at date from TECMIS notices (for incremental sync) |
 
 Auth: `Authorization: Bearer <API_TOKEN>`, `X-API-Key: <API_TOKEN>`, or `?key=<API_TOKEN>`.
 
