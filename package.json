@@ -1,0 +1,11 @@
+{
+  "name": "db-monitor-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "REST API for DB Monitor cloud sync (Vercel + Upstash Redis)",
+  "dependencies": {
+    "@upstash/redis": "^1.34.0"
+  },
+  "engines": { "node": ">=18" }
+}
