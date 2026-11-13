@@ -6,6 +6,9 @@ export default async function handler(req, res) {
   if (req.method !== "GET") return res.status(405).json({ error: "method not allowed" });
 
   const all = (await redis.hgetall(KEY)) || {};
+  const parsed = Object.fromEntries(
+    Object.entries(all).map(([k, v]) => [k, typeof v === "string" ? JSON.parse(v) : v])
+  );
   res.setHeader("Cache-Control", "no-store");
-  res.status(200).json(Object.values(all));
+  res.status(200).json(Object.values(parsed));
 }
